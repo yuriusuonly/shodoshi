@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build APK (x64)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--dart-define-from-file=.env/release.json",
+        "--target-platform=android-x64"
+      ]
+    },
+    {
+      "label": "Install APK (x64)",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      },
+      "command": "flutter",
+      "args": [
+        "install",
+        "--device-id=localhost:6520",
+        "--use-application-binary=build/app/outputs/flutter-apk/app-release.apk"
+      ]
+    },
+  ]
+}
